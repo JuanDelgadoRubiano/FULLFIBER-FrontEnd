@@ -1,0 +1,36 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #442C58;
+    position: absolute;
+}
+
+.h2 {
+    margin: auto;
+    font-family: ' Arial Regular', 'Arial', sans-serif;
+}
+
+
+.Ingreso {
+    display: flex;
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    display: block;
+    align-items: center;
+    width: 334px;
+    height: 320px;
+    border-radius: 15px;
+    border: 1px solid #797979;
+    box-sizing: border-box;
+    background-color: #7c5e7d;
+    text-align: center;
+    line-height: normal;
+}
+
+.mat-form-field{
+    width: 85%;
+}

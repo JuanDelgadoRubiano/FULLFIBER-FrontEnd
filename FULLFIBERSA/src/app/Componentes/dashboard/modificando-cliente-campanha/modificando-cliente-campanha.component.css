@@ -1,0 +1,51 @@
+.body {
+    flex-wrap: wrap;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1300px;
+    width: 100%;
+    background-color: #442C58;
+}
+
+.formularioPadre{
+    top:128px ;
+    position: absolute;
+    width: 451px;
+    height: 1200px;
+    border-radius: 15px;
+    border: 1px solid #797979;
+    background-color: #7c5e7d;
+    box-sizing: border-box;
+    font-family: 'Arial Regular', 'Arial', sans-serif;
+    color: #333333;
+    text-align: center;
+    line-height: normal;
+
+}
+
+.formularioHijo{
+    border-radius: 15px;
+    width: 382px;
+    height: 1150px;
+    border: 1px solid #797979;
+    background-color: #d9c8c8;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    line-height: normal;
+    margin-top: 30px;
+    margin-left: 7%;
+
+}
+
+.mat-form-field{
+    width: 80%;
+}
+
+
+.mat-raised-button{
+    margin-top: 10px;
+    width: 80%;
+}

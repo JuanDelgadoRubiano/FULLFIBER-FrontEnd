@@ -1,0 +1,44 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #442C58;
+    position: absolute;
+}
+
+
+.asignar {
+    width: 508px;
+    height: 319px;
+    border-radius: 20px;
+    background-color: #7c5e7d;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .titulo {
+      width: 367px;
+      height: 49px;
+      border-radius: 15px;
+      background-color: #d9c8c8;
+      text-align:center;
+      display: inline-block;
+      margin-left: 15%;
+      margin-top: 5%;
+  }
+  
+  .texto {
+    margin-top: 10px;
+    margin-left: 7%;
+    display: inline-block;
+    width: 432px;
+    height: 200px;
+    border-radius: 15px;
+    background-color: #d9c8c8;
+    text-align: center;
+  }
+

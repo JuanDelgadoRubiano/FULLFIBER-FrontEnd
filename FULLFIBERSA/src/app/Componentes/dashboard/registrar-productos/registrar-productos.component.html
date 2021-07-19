@@ -1,0 +1,39 @@
+<div class="body">
+        <div class="contenedor-formulario">
+            <div class="formulario">
+                
+                <H3>
+                    REGISTRAR PRODUCTOS
+                </H3>
+                    <hr width="250px">
+                <form #formularioProductos="ngForm" >
+                <mat-form-field appearance="fill">
+                    <mat-label>Ingrese el Nombre del producto</mat-label>
+                    <input matInput maxlength="10" [(ngModel)]= "nombreProducto" name = "nombreProducto" autocomplete="off" required>
+                </mat-form-field>
+            
+                <mat-form-field appearance="fill">
+                    <mat-label>Escoja la categoria del producto</mat-label>
+                    <mat-select [(ngModel)]= "tipoProducto" name = "tipoProducto" required>
+                        <mat-option *ngFor="let tipo of tiposProductos" [value]="tipo.value">
+                        {{tipo.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                
+                <mat-form-field appearance="fill">
+                <mat-label>Agrega una Descripcion del producto</mat-label>
+                <textarea matInput [(ngModel)]= "descripcionProducto" name = "descripcionProducto" autocomplete="off" required></textarea>
+                </mat-form-field>
+
+                <button mat-raised-button (click) = "adicionarProducto(formularioProductos)" [disabled] = "formularioProductos.invalid" routerLink = "/dashboard/inicio">
+                    AGREGAR
+                </button>
+                 </form>
+                <button mat-raised-button routerLink = "/dashboard/inicio">
+                    CANCELAR
+                </button>
+            </div>
+        </div>
+    
+</div>

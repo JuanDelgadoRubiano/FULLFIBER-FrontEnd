@@ -1,0 +1,70 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #442C58;
+}
+
+.izquierda{
+    margin: auto;
+    display: inline-block;
+}
+
+.derecha{
+    display: inline-block;
+    margin: auto;
+}
+
+.nosotros {
+  width: 508px;
+  height: 319px;
+  border-radius: 20px;
+  background-color: #7c5e7d;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.titulo {
+    width: 367px;
+    height: 49px;
+    border-radius: 15px;
+    background-color: #d9c8c8;
+    line-height: normal;
+    text-align:center;
+    display: inline-block;
+    align-items: center;
+    align-content: center;
+    margin-left: 15%;
+    margin-top: 5%;
+}
+
+.texto {
+  margin-top: 10px;
+  margin-left: 7%;
+  position: relative;
+  display: inline-block;
+  width: 432px;
+  height: 200px;
+  border-radius: 15px;
+  background-color: #d9c8c8;
+  text-align: center;
+  line-height: normal;
+}
+
+.imagen{
+    width: 508px;
+    height: 349px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.imagencita {
+    margin-top: 20px;
+    height: 300px;
+    width: 370px;
+}
+

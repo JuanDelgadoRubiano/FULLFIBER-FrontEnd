@@ -1,0 +1,62 @@
+<div class="body">
+   
+    <div class="buscador">
+        <h2  style="color:#FFFFFF">
+            Buscar Cliente
+        </h2>
+        <div class = "buscadorHijo">
+        <form #formulariocliente = "ngForm" (ngSubmit)="encontrarClienteByDocumento()">
+        <mat-form-field appearance="fill" >
+            <mat-label>Ingresa el documento del cliente</mat-label>
+            <input matInput maxlength="10" [(ngModel)]= "documento" name = "documento" type="number" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required autocomplete="off">
+        </mat-form-field>
+        <button mat-raised-button color = "primary" [disabled] = "formulariocliente.invalid" type = "submit">
+            BUSCAR
+        </button>
+        </form>
+        </div>
+    </div>
+
+    <div class="campanñasA">
+        CAMPAÑAS A LAS QUE APLICA:
+    </div>
+    <div class="cliente">
+        DATOS DEL CLIENTE:
+    </div>
+    <div class="datos-cliente">
+        <mat-form-field appearance="fill" color = "white" class="nombre">
+            <mat-label>Nombre del Cliente</mat-label>
+            <input matInput  [(ngModel)]= "nombreCliente" name = "nombreCliente" type="text"  disabled >
+        </mat-form-field>
+        <mat-form-field appearance="fill" color = "white" class="nombre">
+            <mat-label >Tipo del Cliente</mat-label>
+            <input matInput  [(ngModel)]= "tipoCliente" name = "tipoCliente" type="text"  disabled >
+        </mat-form-field>
+        <mat-form-field appearance="fill" color = "white" class="nombre">
+            <mat-label>Calificacion del cliente</mat-label>
+            <input matInput  [(ngModel)]= "calificacionCliente" name = "calificacionCliente" type="text"  disabled >
+        </mat-form-field>
+    </div>
+    <div class="campanhas">
+        <mat-card class="example-card" *ngFor="let campanha of campanhas">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{campanha.titulo}}</mat-card-title>
+              <mat-card-subtitle>Campaña</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>
+                 El precio es: ${{campanha.precio}}
+                </p>
+              </mat-card-content>
+            <mat-card-content>
+              <p>
+                Descripcion: {{campanha.descripcion}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button (click) = "modificarCampanha(campanha.titulo, campanha.precio, campanha.tipoProducto, campanha.fechaInicio, campanha.fechaFinal, campanha.value)">MODIFICAR</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+.body {
+    flex-wrap: wrap;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+    width: 100%;
+    background-color: #442C58;
+}
+
+.buscador{
+  position: absolute;
+  margin-bottom: 50%;
+  width: 551px;
+  height: 166px;
+  border-radius: 15px;
+  border: 1px solid #797979;
+  background-color: #7c5e7d;
+  font-family: 'Arial Regular', 'Arial', sans-serif;
+  color: #333333;
+  text-align: center;
+  
+}
+
+.mat-form-field {
+    width: 85%;
+}
+
+.nombre {
+    border-radius: 15px;
+    width: 30%;
+    margin-top: 15px;
+    background-color: #d9c8c8;
+    height: 50px;
+
+}
+
+.cliente {
+    color: white;
+    align-self: center;
+    text-align: left;
+    top: 55%;
+    height: 30px;
+    width: 65%;
+    border-bottom: 1px solid white;
+    position: absolute;
+    
+    
+}
+
+
+.campanhas {
+    border-radius: 15px;
+    border: 1px solid #797979;
+    background-color: #7c5e7d;
+    margin-top: 35%;
+    position: absolute;
+    border: 1px solid white;
+    flex-wrap: wrap;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    height: 400px;
+}
+
+.datos-cliente{
+    align-items: center;
+    border-radius: 15px;
+    border: 1px solid #797979;
+    background-color: #7c5e7d;
+    margin-bottom: 17%;
+    width: 65%;
+    height: 90px;
+    border: 1px solid white;
+    flex-wrap: wrap;
+    flex-direction: column;
+    display: flex;
+    
+}
+
+.campanñasA {
+    color: white;
+    align-self: center;
+    text-align: left;
+    top: 83%;
+    height: 30px;
+    width: 65%;
+    border-bottom: 1px solid white;
+    position: absolute;
+    
+}
+
+.mat-card{
+    background-color: #d9c8c8;
+    border-radius: 15px;
+    height: 250px;
+    width: 175px;
+}
+
+.example-header-image {
+    background-image: url('https://www.todoprovincial.com/wp-content/uploads/2020/05/Combo.jpg');
+    background-size: cover;
+  }
+
+  .mat-raised-button{
+     width: 80%;
+  }
+
+
+

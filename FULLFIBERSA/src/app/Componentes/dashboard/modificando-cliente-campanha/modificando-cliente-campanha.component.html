@@ -1,0 +1,87 @@
+
+<div class="body">
+    <div class="formularioPadre">
+        <div class="formularioHijo">
+            <H2>
+                MODIFICAR CAMPAÑA
+            </H2>
+            <div class="campanhaActual">
+                CAMPAÑA ACTUAL
+            </div>
+            <mat-form-field appearance="fill" >
+                <mat-label>Nombre del Producto en Campaña</mat-label>
+                <input matInput [(ngModel)]= "campanhaActual.nombreProducto" name = "campanhaActual.nombreProducto" disabled >
+            </mat-form-field>
+            <mat-form-field appearance="fill" >
+                <mat-label>Tipo del Producto en Campaña</mat-label>
+                <input matInput [(ngModel)]= "campanhaActual.tipoProducto" name = "campanhaActual.tipoProducto" disabled >
+            </mat-form-field>
+            <mat-form-field appearance="fill" >
+                <mat-label>Precio de la Campaña</mat-label>
+                <input matInput [(ngModel)]= "campanhaActual.precioProducto" name = "campanhaActual.precioProducto" disabled >
+            </mat-form-field>
+            <h3>
+                Vigencia
+            </h3>
+            <mat-form-field appearance="fill" >
+                <mat-label>Activo desde:</mat-label>
+                <input matInput  [(ngModel)]= "campanhaActual.fechaInicio" name = "campanhaActual.fechaInicio"  disabled >
+            </mat-form-field>
+            <mat-form-field appearance="fill" >
+                <mat-label>Activo Hasta:</mat-label>
+                <input matInput  [(ngModel)]= "campanhaActual.fechaFinal" name = "campanhaActual.fechaFinal" disabled >
+            </mat-form-field>
+            <form #comentarioFormulario = "ngForm" >
+            <mat-form-field appearance="fill" >
+                <mat-label>Posibles Campañas para modificar </mat-label>
+                <mat-select  required [(ngModel)]= "validacionSelect" name = "validacionSelect">
+                    <mat-option  *ngFor="let campanha of posiblesCampanhas" [value]="campanha.idCampanha" (click)= "actualizarNuevaCampanha(campanha.idCampanha)" >
+                    {{campanha.nombreProducto}} 
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+
+            <div class="nuevaCampanha">
+                NUEVA CAMPAÑA
+            </div>
+            
+            <mat-form-field appearance="fill" >
+                <mat-label>Nombre del Producto en Campaña</mat-label>
+                <input matInput [(ngModel)]= "campanhaNueva.nombreProducto" name = "campanhaNueva.nombreProducto"  disabled >
+            </mat-form-field>
+            <mat-form-field appearance="fill" >
+                <mat-label>Tipo del Producto en Campaña</mat-label>
+                <input matInput  [(ngModel)]= "campanhaNueva.tipoProducto" name = "campanhaNueva.tipoProducto" disabled >
+            </mat-form-field>
+            <mat-form-field appearance="fill" >
+                <mat-label>Precio de la Campaña</mat-label>
+                <input matInput  [(ngModel)]= "campanhaNueva.precioProducto" name = "campanhaNueva.precioProducto" disabled  required>
+            </mat-form-field>
+            <h3>
+                Vigencia
+            </h3>
+            <mat-form-field appearance="fill" >
+                <mat-label>Activo desde: DD/MM/AA</mat-label>
+                <input matInput  [(ngModel)]= "campanhaNueva.fechaInicio" name = "campanhaNueva.fechaInicio" disabled >
+            </mat-form-field>
+            <mat-form-field appearance="fill" >
+                <mat-label>Activo Hasta: DD/MM/AA</mat-label>
+                <input matInput  [(ngModel)]= "campanhaNueva.fechaFinal" name = "campanhaNueva.fechaFinal" disabled >
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill">
+                <mat-label>Describe el Motivo del Cambio</mat-label>
+                <textarea matInput [(ngModel)]= "logDeCambio.comentarioCambio" name = "logDeCambio.comentarioCambio" autocomplete="off" required></textarea>
+                </mat-form-field>
+            </form>
+            <button mat-raised-button (click)= "modificarClienteCampanha()" [disabled] = "comentarioFormulario.invalid" routerLink = "/dashboard/modificarCampañas" >
+                MODIFICAR
+            </button>
+            <button mat-raised-button (click) = "vaciarLocalStorage()"routerLink = "/dashboard/modificarCampañas" >
+                CANCELAR
+            </button>
+        </div>
+    </div>
+
+</div>

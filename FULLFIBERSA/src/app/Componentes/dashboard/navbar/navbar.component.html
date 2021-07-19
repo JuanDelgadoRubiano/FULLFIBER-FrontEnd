@@ -1,0 +1,25 @@
+<mat-toolbar color ="primary">
+    <span>
+        FULLFIBERSA
+    </span>
+    <span class="example-spacer"></span>
+    <button mat-button routerLink = "/dashboard/inicio">INICIO</button>
+    <button mat-button [matMenuTriggerFor]="productos">PRODUCTOS</button>
+    <mat-menu #productos="matMenu">
+        <button mat-menu-item  routerLink = "/dashboard/registrarProductos"> REGISTRAR PRODUCTOS</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="campanhas">CAMPAÑAS</button>
+    <mat-menu #campanhas="matMenu">
+        <button mat-menu-item  routerLink = "/dashboard/registrarCampañas"> REGISTRAR CAMPAÑAS</button>
+        <button mat-menu-item  routerLink = "/dashboard/modificarCampañas"> MODIFICAR CLIENTE CAMPAÑA</button>
+    </mat-menu>
+    <button mat-button  routerLink = "/dashboard/asignarCampañas">ASIGNAR CAMPAÑAS</button>
+    <button mat-button  routerLink = "/dashboard/reporte">GENERAR REPORTE</button>
+    <button mat-button  routerLink = "/dashboard/reporteLogs">GENERAR REPORTE LOGS</button>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class = "example-icon favorite-icon"  routerLink = "/ingresar" >
+        <mat-icon>
+            logout
+        </mat-icon>
+    </button>
+</mat-toolbar>
