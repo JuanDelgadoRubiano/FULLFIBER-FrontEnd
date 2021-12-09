@@ -65,7 +65,16 @@ export class RegistrarCampanhasComponent implements OnInit {
   serializedDate = new FormControl((new Date()).toISOString());
 
   ngOnInit(): void {
-
+    if(sessionStorage.getItem('idAdmin') === '0'){
+      Swal.fire({
+        icon: 'info',
+        title: 'Alerta',
+        text: 'Debes logearte para acceder a esta ruta',
+        showConfirmButton: false,
+        timer: 2000
+      });
+      this.router.navigateByUrl("/ingreso");
+    }
   }
 
 

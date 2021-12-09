@@ -20,7 +20,7 @@ export class IngresoComponent implements OnInit {
   contrasenhaAux: any;
 
   // VARIABLE PARA ALMACENAR EL ID DEL ADMINISTRADOR
-  public idAdmin = 0;
+  public idAdmin = 123;
 
   // OBJETO QUE SIMULA EL USUARIO Y LA CONTRASEÑA OBTENIDOS DEL BACKEND
   public usuarioAdminSimulado = {
@@ -30,7 +30,6 @@ export class IngresoComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.encontrarAdminByNombre();
     sessionStorage.setItem('idAdmin', '0')
   }
 
@@ -45,13 +44,13 @@ export class IngresoComponent implements OnInit {
         timer: 1500
       });
     }
-    else if (this.usuarioAux === this.usuarioAdminSimulado.usuario && 
+    else if (this.usuarioAux === this.usuarioAdminSimulado.usuario &&
       this.contrasenhaAux === this.usuarioAdminSimulado.contraseña){
         sessionStorage.setItem('idAdmin', this.idAdmin.toString())
-        this.router.navigateByUrl("/dashboard/inicio")
+        this.router.navigateByUrl("/dashboard/ovas")
         Swal.fire({
           title: 'BIENVENIDO',
-          text: 'Bienvenido a FULLFIBER SA APP',
+          text: 'Bienvenido a OVASWEBSITE SA APP',
           showConfirmButton: false,
           timer: 2000
         });
@@ -68,7 +67,7 @@ export class IngresoComponent implements OnInit {
       }
   }
 
-  // METODO PARA ENCONTRAR EL ID DEL ADMINISTRADOR "JUAN" Y ALMACENARLO PARA SER USADO AL INGRESAR 
+  // METODO PARA ENCONTRAR EL ID DEL ADMINISTRADOR "JUAN" Y ALMACENARLO PARA SER USADO AL INGRESAR
   encontrarAdminByNombre(){
     this.administradoresServicio.obtenerAdminByNombre("juan").subscribe(
       (response: AdministradoresRecibir) => {
