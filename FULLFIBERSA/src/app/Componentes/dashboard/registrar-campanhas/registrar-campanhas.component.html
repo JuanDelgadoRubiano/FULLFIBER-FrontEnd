@@ -1,86 +1,92 @@
 <div class="body">
-    
-        <div class="formulario-padre">
-            <div class="formulario-hijo">
-                <form #addForm="ngForm" >
-                <h2>
-                    REGISTRAR CAMPAÑAS
-                </h2>
-                <hr width="300px">
-                <mat-form-field appearance="fill">
-                    <mat-label>Escoja la categoria de la campaña</mat-label>
-                    <mat-select  required  [(ngModel)]= "tiposProducto.idTipo" name = "idTipo" >
-                        <mat-option *ngFor="let tipo of tipos" [value]="tipo.value" (click) = "encontrarProductosByIdTipo(tipo.value)">
-                        {{tipo.viewValue}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Escoja el producto </mat-label>
-                    <mat-select required [(ngModel)]= "productoAux" name = "productoAux" >
-                        <mat-option *ngFor="let p of productos" [value]="p.value">
-                        {{p.viewValue}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
 
-                <mat-form-field appearance="fill">
-                    <mat-label>Ingrese el Precio de la campaña</mat-label>
-                    <input matInput maxlength="9" min="1"  [(ngModel)]= "precioCampanhaAux" name = "precioCampanhaAux" type="number"  autocomplete="off" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"   required>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Inicio vigencia de la campaña</mat-label>
-                    <input matInput [matDatepicker]="picker"  [(ngModel)]= "fechaInicioAux" name = "fechaInicioAux" required autocomplete="off">
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Final vigencia de la campaña</mat-label>
-                    <input matInput [matDatepicker]="picker2"  [(ngModel)]= "fechaFinalAux" name = "fechaFinalAux"  required autocomplete="off"> 
-                    <mat-datepicker-toggle matSuffix [for]="picker2" ></mat-datepicker-toggle>
-                    <mat-datepicker #picker2 ></mat-datepicker>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Condicion de Calificacion </mat-label>
-                    <mat-select  [(ngModel)]= "condicionCalificacionAux" name = "condicionCalificacionAux" required>
-                        <mat-option *ngFor="let calificacion of calificaciones" [value]="calificacion.value">
-                        {{calificacion.viewValue}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <h4>Elige las condiciones por Tipo</h4>
-                <mat-checkbox class="example-margin" [(ngModel)]= "industrial" name = "industrial">Industrial</mat-checkbox>
-                <mat-checkbox class="example-margin" [(ngModel)]= "residencial" name = "residencial"> Residencial</mat-checkbox>
-                <mat-checkbox class="example-margin" [(ngModel)]= "comercial" name = "comercial">Comercial</mat-checkbox>
-                <mat-form-field appearance="fill">
-                    <mat-label>Condicion Factura por Tipo</mat-label>
-                        <mat-select  [(ngModel)]= "condicionFacturaTipo" name = "condicionFacturaTipo" required>
-                            <mat-option *ngFor="let precio of precios" [value]="precio.value">
-                            {{precio.viewValue}}
-                            </mat-option>
-                        </mat-select>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Condicion Factura General </mat-label>
-                    <mat-select  [(ngModel)]= "condicionFacturaGeneral" name = "condicionFacturaGeneral"  required >
-                        <mat-option *ngFor="let precio of precios" [value]="precio.value">
-                        {{precio.viewValue}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
+  <div class="formulario-padre">
+    <div class="formulario-hijo">
+      <form #addForm="ngForm">
+        <h2>
+          REGISTRAR OVAS
+        </h2>
+        <hr width="300px">
+        <mat-form-field appearance="fill">
+          <mat-label>Titulo Ova</mat-label>
+          <input matInput  [(ngModel)]="name_ova" name="name_ova"
+            autocomplete="off" required>
+        </mat-form-field>
 
+        <mat-form-field appearance="fill">
+          <mat-label>Autor Ova</mat-label>
+          <input matInput  [(ngModel)]="autor_ova" name="autor_ova"
+            autocomplete="off" required>
+        </mat-form-field>
 
-                <mat-form-field appearance="fill">
-                    <mat-label>Agrega una Descripcion de la Campaña</mat-label>
-                    <textarea matInput maxlength="200"  [(ngModel)]= "campanha.descripcionCampanha" name = "descripcionCampanha"  autocomplete="off" required></textarea>
-                </mat-form-field>
-                <button mat-raised-button (click)= "adicionarCampanha(addForm)" [disabled] = "addForm.invalid" routerLink = "/dashboard/inicio">
-                    AGREGAR
-                </button>
-            </form>
-            <button mat-raised-button  routerLink = "/dashboard/inicio">
-                CANCELAR
-            </button>
-            </div>
-        </div>
+        <mat-form-field appearance="fill">
+          <mat-label>Tema Ova</mat-label>
+          <input matInput  [(ngModel)]="subject_ova" name="subject_ova"
+            autocomplete="off" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Descripcion Ova</mat-label>
+          <input matInput  [(ngModel)]="description_ova" name="description_ova"
+            autocomplete="off" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Categoria Ova</mat-label>
+          <input matInput [(ngModel)]="category_ova" name="category_ova"
+            autocomplete="off" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Lenguaje Ova</mat-label>
+          <input matInput  [(ngModel)]="languaje_ova" name="languaje_ova"
+            autocomplete="off" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Editor Ova</mat-label>
+          <input matInput [(ngModel)]="publisher_ova" name="publisher_ova"
+            autocomplete="off" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Fuente Ova</mat-label>
+          <input matInput [(ngModel)]="source_ova" name="source_ova"
+            autocomplete="off" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Relacion Ova</mat-label>
+          <input matInput  [(ngModel)]="relation_ova" name="relation_ova"
+            autocomplete="off" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Covertura Ova</mat-label>
+          <input matInput  [(ngModel)]="coverage_ova" name="coverage_ova"
+            autocomplete="off" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Derechos Ova</mat-label>
+          <input matInput  [(ngModel)]="rights_ova" name="rights_ova"
+            autocomplete="off" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Formato Ova</mat-label>
+          <input matInput  [(ngModel)]="format_ova" name="format_ova"
+            autocomplete="off" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha publicacion ova</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="fechaPublicacionOva" name="fechaPublicacionOva" required
+            autocomplete="off">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <button mat-raised-button (click)="adicionarOva(addForm)" [disabled]="addForm.invalid">
+          AGREGAR
+        </button>
+      </form>
+      <button mat-raised-button routerLink="/dashboard/inicio">
+        CANCELAR
+      </button>
+    </div>
+  </div>
 </div>

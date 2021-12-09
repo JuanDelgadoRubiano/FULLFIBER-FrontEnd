@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { CompartidosModule } from '../compartidos/compartidos.module';
 import { DashboardComponent } from './dashboard.component';
@@ -28,8 +28,9 @@ import { ModificandoClienteCampanhaComponent } from './modificando-cliente-campa
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    CompartidosModule
-    
+    CompartidosModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DashboardModule { }

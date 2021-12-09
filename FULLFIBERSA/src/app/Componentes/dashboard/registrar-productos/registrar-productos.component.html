@@ -1,7 +1,7 @@
 <div class="body">
         <div class="contenedor-formulario">
             <div class="formulario">
-                
+
                 <H3>
                     REGISTRAR PRODUCTOS
                 </H3>
@@ -11,7 +11,7 @@
                     <mat-label>Ingrese el Nombre del producto</mat-label>
                     <input matInput maxlength="10" [(ngModel)]= "nombreProducto" name = "nombreProducto" autocomplete="off" required>
                 </mat-form-field>
-            
+
                 <mat-form-field appearance="fill">
                     <mat-label>Escoja la categoria del producto</mat-label>
                     <mat-select [(ngModel)]= "tipoProducto" name = "tipoProducto" required>
@@ -20,7 +20,7 @@
                         </mat-option>
                     </mat-select>
                     </mat-form-field>
-                
+
                 <mat-form-field appearance="fill">
                 <mat-label>Agrega una Descripcion del producto</mat-label>
                 <textarea matInput [(ngModel)]= "descripcionProducto" name = "descripcionProducto" autocomplete="off" required></textarea>
@@ -35,5 +35,5 @@
                 </button>
             </div>
         </div>
-    
+
 </div>

@@ -10,16 +10,18 @@ import { ModificarClienteCampanhaComponent } from './modificar-cliente-campanha/
 import { RegistrarCampanhasComponent } from './registrar-campanhas/registrar-campanhas.component';
 import { RegistrarProductosComponent } from './registrar-productos/registrar-productos.component';
 
+
 const routes: Routes = [
   {path: '', component: DashboardComponent, children : [
       {path: 'inicio', component: InicioComponent },
       {path: 'registrarProductos', component: RegistrarProductosComponent},
-      {path: 'registrarCampañas', component: RegistrarCampanhasComponent },
+      {path: 'ovas', component: RegistrarCampanhasComponent },
       {path: 'modificarCampañas', component: ModificarClienteCampanhaComponent },
       {path: 'asignarCampañas', component: AsignarCampanhasComponent },
       {path: 'reporte', component: GenerarReporteComponent },
       {path: 'reporteLogs', component: LogsDeCambioComponent },
       {path: 'modificandoCliente', component: ModificandoClienteCampanhaComponent}
+
   ]}
 ];
 

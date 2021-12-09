@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 1000px;
+    height: 1300px;
     width: 100%;
     background-color: #442C58;
 }
@@ -12,7 +12,7 @@
     top:128px ;
     position: absolute;
     width: 451px;
-    height: 930px;
+    height: 1130px;
     border-radius: 15px;
     border: 1px solid #797979;
     background-color: #7c5e7d;
@@ -21,13 +21,13 @@
     color: #333333;
     text-align: center;
     line-height: normal;
-    
+
 }
 
 .formulario-hijo{
     border-radius: 15px;
     width: 382px;
-    height: 880px;
+    height:1080px;
     border: 1px solid #797979;
     background-color: #d9c8c8;
     box-sizing: border-box;

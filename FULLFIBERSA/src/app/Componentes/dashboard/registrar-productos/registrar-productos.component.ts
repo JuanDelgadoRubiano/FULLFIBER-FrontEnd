@@ -15,7 +15,7 @@ import Swal from 'sweetalert2'
 })
 export class RegistrarProductosComponent implements OnInit {
 
-    constructor(private productosService: ProductosService, 
+    constructor(private productosService: ProductosService,
               private tiposProductosService: TiposProductoService,
               private router: Router) { }
 
@@ -42,10 +42,10 @@ export class RegistrarProductosComponent implements OnInit {
     tipoProducto: this.tipos
   }
 
-  // OBJETO AUXILIAR PARA INGRESAR LOS TIPOS AL ARRAY DE TIPOS 
+  // OBJETO AUXILIAR PARA INGRESAR LOS TIPOS AL ARRAY DE TIPOS
   public rutaTipos: any = {value: 0, viewValue: ''};
 
- 
+
   ngOnInit(): void {
     // VALIDACION DE QUE HAYA UN ADMIN LOGEADO
     if(sessionStorage.getItem('idAdmin') === '0'){
@@ -62,7 +62,7 @@ export class RegistrarProductosComponent implements OnInit {
     }
   }
 
-   // METODO PARA ENVIAR EL PRODUCTO QUE DESEA REGISTRARSE 
+   // METODO PARA ENVIAR EL PRODUCTO QUE DESEA REGISTRARSE
    adicionarProducto(form: NgForm): void{
     this.productos.nombreProducto = this.nombreProducto;
     this.tipos.idTipo = this.tipoProducto;
@@ -93,6 +93,7 @@ export class RegistrarProductosComponent implements OnInit {
 
   // METODO QUE EXTRAE LOS TIPOS DE PRODUCTOS DESDE LA BASE, PARA SER CARGADOS EN LA VISTA
   encontrarTiposDeProducto(): void{
+    console.log()
     this.tiposProductosService.obtenerTiposDeProducto().subscribe(
       (response: TiposProductos[]) => {
         response.forEach(element => {
