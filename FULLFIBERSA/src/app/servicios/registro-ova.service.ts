@@ -19,4 +19,8 @@ export class ovasService {
   uploadFile(formData: any) {
     return this.http.post<any>(`${this.apiServerUrl}/ovaArchivo`, formData);
   }
+
+  uploadJson(formData: any) {
+    return this.http.post<any>(`${this.apiServerUrl}/ovaJson`, formData);
+  }
 }
