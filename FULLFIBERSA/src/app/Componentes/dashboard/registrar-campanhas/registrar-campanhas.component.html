@@ -2,7 +2,7 @@
 
   <div class="formulario-padre">
     <div class="formulario-hijo">
-      <form #addForm="ngForm">
+      <form #addForm="ngForm" enctype="multipart/form-data">
         <h2>
           REGISTRAR OVAS
         </h2>
@@ -79,6 +79,11 @@
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
+
+        <label for="file">Selecciona el archivo del OVA</label>
+        <input placeholder="Selecciona ss" (change)="fileChange($event)"  type="file"  class="custom-file-input"  id="inputGroupFile01"  aria-describedby="inputGroupFileAddon01" >
+        <label for="file">Selecciona el quiz del OVA</label>
+        <input (change)="fileChange2($event)"  type="file"  class="custom-file-input"  id="inputGroupFile01"  aria-describedby="inputGroupFileAddon01" >
 
         <button mat-raised-button (click)="adicionarOva(addForm)" [disabled]="addForm.invalid">
           AGREGAR

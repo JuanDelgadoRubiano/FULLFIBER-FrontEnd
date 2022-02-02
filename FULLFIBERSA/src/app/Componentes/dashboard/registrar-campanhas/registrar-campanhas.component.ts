@@ -33,8 +33,10 @@ export class RegistrarCampanhasComponent implements OnInit {
     coverage_ova: any;
     rights_ova: any;
     format_ova: any;
+    id_ova_created: any;
     public fechaPublicacionOva: any;
-
+    public archivos: any = [];
+    public quiz: any = [];
 
  // OBJETO DONDE SE ALMACENAN LOS DATOS DEL OVA QUE SERA REGISTRADO
  public ova: ovaToSend = {
@@ -77,6 +79,14 @@ export class RegistrarCampanhasComponent implements OnInit {
     }
   }
 
+  fileChange(event: any): any{
+    this.archivos = event.target.files;
+  }
+
+  fileChange2(event: any): any{
+    this.quiz = event.target.files;
+  }
+
 
   // METODO PARA ADICIONAR LA OVA QUE SE REGISTRO EN EL FORMULARIO
   adicionarOva(form: NgForm): void{
@@ -99,6 +109,20 @@ export class RegistrarCampanhasComponent implements OnInit {
     // ENVIANDO LA OVA REGISTRADA AL BACKEND.
     this.ovasService.crearOva(this.ova).subscribe(
       (response: ovaToReceive) => {
+        this.id_ova_created = response.metaData.id
+        let formData = new FormData();
+        let formData2 = new FormData();
+        for (var i = 0; i < this.archivos.length; i++) {
+          formData.append("uploads[]", this.archivos[i], 'OVA#' + this.id_ova_created);
+          formData2.append("uploads[]", this.quiz[i], 'quiz#' + this.id_ova_created);
+        }
+        this.ovasService.uploadFile(formData).subscribe((res: any)=> {
+          console.log('response received is ', res);
+        });
+
+        this.ovasService.uploadFile(formData2).subscribe((res: any)=> {
+          console.log('response received is ', res);
+        });
         Swal.fire({
           icon: 'success',
           title: 'Creado',

@@ -13,7 +13,10 @@ export class ovasService {
   constructor(private http:  HttpClient) { }
 
   public crearOva(ova: ovaToSend): Observable<ovaToReceive>{
-    console.log(this.apiServerUrl)
     return this.http.post<any>(`${this.apiServerUrl}/ova`, ova);
+  }
+
+  uploadFile(formData: any) {
+    return this.http.post<any>(`${this.apiServerUrl}/ovaArchivo`, formData);
   }
 }

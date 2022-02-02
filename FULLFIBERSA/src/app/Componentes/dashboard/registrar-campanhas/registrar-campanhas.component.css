@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 1300px;
+    height: 1570px;
     width: 100%;
     background-color: #442C58;
 }
@@ -12,7 +12,7 @@
     top:128px ;
     position: absolute;
     width: 451px;
-    height: 1130px;
+    height: 1430px;
     border-radius: 15px;
     border: 1px solid #797979;
     background-color: #7c5e7d;
@@ -27,7 +27,7 @@
 .formulario-hijo{
     border-radius: 15px;
     width: 382px;
-    height:1080px;
+    height:1380px;
     border: 1px solid #797979;
     background-color: #d9c8c8;
     box-sizing: border-box;
@@ -50,4 +50,14 @@
 .mat-raised-button {
     margin-bottom: 10px;
     width: 80%;
+}
+
+label {
+  display: block;
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+  margin: .4rem 0;
 }
