@@ -113,8 +113,8 @@ export class RegistrarCampanhasComponent implements OnInit {
         let formData = new FormData();
         let formData2 = new FormData();
         for (var i = 0; i < this.archivos.length; i++) {
-          formData.append("uploads[]", this.archivos[i], 'OVA_' + this.id_ova_created + '.vue');
-          formData2.append("uploads[]", this.quiz[i], 'quiz_' + this.id_ova_created + '.json');
+          formData.append("uploads[]", this.archivos[i], 'ova' + this.id_ova_created + '.mp4');
+          formData2.append("uploads[]", this.quiz[i], 'ova' + this.id_ova_created + '.json');
         }
         this.ovasService.uploadFile(formData).subscribe((res: any)=> {
           console.log('response received is ', res);
